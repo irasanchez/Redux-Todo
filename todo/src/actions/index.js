@@ -1,6 +1,8 @@
 //ADD_TODO takes text from input field from TodoForm and returns action object
 export const ADD_TODO = "ADD_TODO";
 
+let nextTodoId = 0;
+
 export const addTodo = text => {
   return {
     type: ADD_TODO,
