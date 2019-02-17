@@ -9,9 +9,11 @@ const TodoList = props => {
   return (
     <ul>
       {props.todos.map(todo => {
-        <li key={todo.id} style={todo.completed ? style : null}>
-          {todo.text}
-        </li>;
+        return (
+          <li key={todo.id} style={todo.completed ? style : null}>
+            {todo.text}
+          </li>
+        );
       })}
     </ul>
   );

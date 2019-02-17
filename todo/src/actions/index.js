@@ -4,8 +4,6 @@ export const ADD_TODO = "ADD_TODO";
 export const addTodo = text => {
   return {
     type: ADD_TODO,
-    id: Math.random(),
-    text, // ES6 syntax. same as text: text, shows the text input from TodoForm
-    completed: false
+    payload: text
   };
 };

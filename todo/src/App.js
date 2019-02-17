@@ -17,6 +17,7 @@ class App extends Component {
   };
 
   handleSubmit = event => {
+    event.preventDefault();
     this.props.addTodo(this.state.text);
     this.setState({ text: "" });
   };

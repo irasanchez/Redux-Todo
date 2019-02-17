@@ -1,5 +1,11 @@
 const initialState = {
-  todos: []
+  todos: [
+    {
+      text: "example",
+      completed: false,
+      id: Math.random()
+    }
+  ]
 };
 
 function reducer(state = initialState, action) {
@@ -7,10 +13,10 @@ function reducer(state = initialState, action) {
     case "ADD_TODO":
       return {
         todos: [
-          ...state,
+          ...state.todos,
           {
-            id: action.id,
-            text: action.text,
+            id: Math.random(),
+            text: action.payload,
             completed: false
           }
         ]
@@ -20,4 +26,5 @@ function reducer(state = initialState, action) {
       return state;
   }
 }
+
 export default reducer;
