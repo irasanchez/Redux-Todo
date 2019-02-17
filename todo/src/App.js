@@ -31,7 +31,13 @@ class App extends Component {
   }
 }
 
+const mstp = state => {
+  return {
+    todos: state.todos
+  };
+};
+
 export default connect(
-  null,
+  mstp,
   { addTodo }
 )(App);
