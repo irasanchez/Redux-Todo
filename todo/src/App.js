@@ -10,24 +10,33 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ""
+      todoText: ""
     };
   }
 
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ todoText: event.target.value });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.addTodo(this.state.text);
-    this.setState({ text: "" });
+    let todoObject = {
+      text: this.state.todoText,
+      completed: false,
+      id: Math.random()
+    };
+    this.props.addTodo(todoObject);
+    this.setState({ todoText: "" });
   };
 
   render() {
     return (
       <div className="App">
-        <TodoForm onChange={this.handleChange} onSubmit={this.handleSubmit} />
+        <TodoForm
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          todoText={this.state.todoText}
+        />
         <TodoList todos={this.props.todos} />
       </div>
     );

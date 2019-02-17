@@ -1,3 +1,5 @@
+import { ADD_TODO } from "./../actions";
+
 const initialState = {
   todos: [
     {
@@ -10,16 +12,9 @@ const initialState = {
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case "ADD_TODO":
+    case ADD_TODO:
       return {
-        todos: [
-          ...state.todos,
-          {
-            id: Math.random(),
-            text: action.payload,
-            completed: false
-          }
-        ]
+        todos: [...state.todos, action.payload]
       };
 
     default:
