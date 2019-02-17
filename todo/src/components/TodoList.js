@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+/*eslint-disable no-unused-expressions*/
+
+import React from "react";
 import { connect } from "react-redux";
 
 const style = { textDecoration: "line-through" };
