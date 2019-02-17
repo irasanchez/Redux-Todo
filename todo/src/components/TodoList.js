@@ -1,14 +1,21 @@
 import React from "react";
-import Todo from "./Todo";
+import { connect } from "react-redux";
+
+const style = { textDecoration: "line-through" };
 
 const TodoList = props => {
   return (
     <ul>
       {props.todos.map(todo => {
-        <Todo key={todo.id} />;
+        <li key={todo.id} style={todo.completed ? style : null}>
+          {todo.text}
+        </li>;
       })}
     </ul>
   );
 };
 
-export default TodoList;
+export default connect(
+  null,
+  {}
+)(TodoList);
