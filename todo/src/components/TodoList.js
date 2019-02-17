@@ -7,7 +7,7 @@ const style = { textDecoration: "line-through" };
 
 const TodoList = props => {
   return (
-    <ul>
+    <ul className="todolist">
       {props.todos.map(todo => {
         return (
           <li key={todo.id} style={todo.completed ? style : null}>

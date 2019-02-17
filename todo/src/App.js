@@ -4,6 +4,8 @@ import TodoForm from "./components/TodoForm";
 import { connect } from "react-redux";
 import { addTodo } from "./actions";
 
+import "./App.css";
+
 class App extends Component {
   constructor(props) {
     super(props);
