@@ -1,0 +1,18 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+  width: 80vw;
+}
+
+.form input {
+  width: 300px;
+  margin: 20px;
+}
+
+.todolist {
+  align-self: flex-start;
+  padding: 30px 20%;
+}
